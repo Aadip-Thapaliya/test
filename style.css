@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 50%, #16213e 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    max-width: 900px;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
+    color: #00ff41;
+    letter-spacing: 2px;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 30px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #00d4ff;
+}
+
+.player-score, .computer-score {
+    flex: 1;
+}
+
+.player-score h2, .computer-score h2 {
+    font-size: 1.2em;
+    color: #00ff41;
+    margin-bottom: 10px;
+}
+
+.player-score p, .computer-score p {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #00ff41;
+}
+
+.vs {
+    font-size: 1.5em;
+    color: #ff006e;
+    font-weight: bold;
+    margin: 0 20px;
+}
+
+.game-info {
+    margin-bottom: 20px;
+    color: #00d4ff;
+    font-size: 0.95em;
+}
+
+.game-info p {
+    background: rgba(0, 212, 255, 0.1);
+    padding: 10px 15px;
+    border-radius: 5px;
+    border-left: 3px solid #00d4ff;
+}
+
+#pongCanvas {
+    display: block;
+    margin: 0 auto 20px;
+    border: 3px solid #00d4ff;
+    background: #1a1a2e;
+    cursor: none;
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+    border-radius: 5px;
+}
+
+.instructions {
+    margin-top: 20px;
+    color: #ffff00;
+    font-size: 0.9em;
+}
+
+.instructions p {
+    background: rgba(255, 255, 0, 0.1);
+    padding: 12px 15px;
+    border-radius: 5px;
+    border-left: 3px solid #ffff00;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    #pongCanvas {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .scoreboard {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .vs {
+        margin: 10px 0;
+    }
+}
