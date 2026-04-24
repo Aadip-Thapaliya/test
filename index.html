@@ -3,32 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pong Game</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Task Manager - Organize Your Life</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Pong Game</h1>
-        <div class="scoreboard">
-            <div class="player-score">
-                <h2>Player</h2>
-                <p id="playerScore">0</p>
-            </div>
-            <div class="vs">VS</div>
-            <div class="computer-score">
-                <h2>Computer</h2>
-                <p id="computerScore">0</p>
-            </div>
-        </div>
-        
-        <div class="game-info">
-            <p><strong>Controls:</strong> Mouse Y-position or UP/DOWN arrow keys</p>
+        <div class="header">
+            <h1>✓ Task Manager</h1>
+            <p class="subtitle">Stay organized and productive</p>
         </div>
 
-        <canvas id="pongCanvas" width="800" height="400"></canvas>
-        
-        <div class="instructions">
-            <p>Click on the canvas to start the game</p>
+        <div class="main-content">
+            <!-- Input Section -->
+            <div class="input-section">
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        id="taskInput" 
+                        class="task-input" 
+                        placeholder="Add a new task..."
+                        autocomplete="off"
+                    >
+                    <select id="categorySelect" class="category-select">
+                        <option value="work">Work</option>
+                        <option value="personal">Personal</option>
+                        <option value="shopping">Shopping</option>
+                        <option value="health">Health</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <button id="addBtn" class="add-btn">Add</button>
+                </div>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="stats-section">
+                <div class="stat">
+                    <span class="stat-label">Total Tasks</span>
+                    <span class="stat-value" id="totalStats">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Active</span>
+                    <span class="stat-value" id="activeStats">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Completed</span>
+                    <span class="stat-value" id="completedStats">0</span>
+                </div>
+            </div>
+
+            <!-- Filter Section -->
+            <div class="filter-section">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="active">Active</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+                <button id="clearCompleted" class="filter-btn clear-btn">Clear Completed</button>
+            </div>
+
+            <!-- Tasks List -->
+            <div class="tasks-container">
+                <ul id="tasksList" class="tasks-list"></ul>
+                <div id="emptyState" class="empty-state">
+                    🎯 No tasks yet. Add one to get started!
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>💾 Tasks are automatically saved to your browser</p>
         </div>
     </div>
 
